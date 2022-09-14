@@ -7,4 +7,4 @@
 
 *2.UnityChan_Action(2.5D横スクロールアクション) made in August 2022*
 
-*3.Sace racing!(仮) made in development*
+*3.Space racing!(仮) made in development*
