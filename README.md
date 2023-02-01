@@ -7,4 +7,4 @@
 
 *2.UnityChan_Action(2.5D横スクロールアクション) made in August 2022*
 
-*3.Space Racing!(仮) made in December 2022*
+*3.Shoot Racing! made in December 2022*
