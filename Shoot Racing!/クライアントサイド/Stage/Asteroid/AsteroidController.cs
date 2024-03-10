@@ -10,6 +10,11 @@ public class AsteroidController : MonoBehaviour
 
     void Start()
     {
+        Init();
+    }
+
+    private void Init()
+    {
         //¬˜f¯‚Ìtransform‚ğŠi”[‚·‚é
         asteroidTransform = this.transform;
         //¬˜f¯‚ÌÀ•W‚ğŠi”[‚·‚é•Ï”‚Æ‚µ‚Äpos‚ğ—pˆÓ
@@ -27,7 +32,7 @@ public class AsteroidController : MonoBehaviour
     void AsteroidMove()//¬˜f¯‚Ì“®‚«‚ğŠÇ—‚·‚éŠÖ”
     {
         //¬˜f¯‚ğˆÚ“®‚³‚¹‚é
-        asteroidPos -= new Vector2(0, GManager.StarSpeed * Time.deltaTime * asteroidSpeed);
+        asteroidPos -= new Vector2(0, GManager.ObjectSpeed * Time.deltaTime * asteroidSpeed);
         asteroidTransform.position = asteroidPos;
     }
 

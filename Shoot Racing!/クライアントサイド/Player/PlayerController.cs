@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float minX = -8f;// x²•ûŒü‚ÌˆÚ“®”ÍˆÍ‚ÌÅ¬’l
     private float maxX = 8f;// x²•ûŒü‚ÌˆÚ“®”ÍˆÍ‚ÌÅ‘å’l
     [SerializeField] private AudioClip colSound;
+    [SerializeField] private AudioClip goalSE;
     AudioSource audioSource;
 
     void Start()
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //‚à‚µáŠQ•¨‚ÉÕ“Ë‚µ‚½‚ç
-        if (collision.gameObject.tag == "obstacle")
+        if (collision.gameObject.tag == "obstacle" || collision.gameObject.tag == "blackObstacle")
         {
             colObstacle = true;
             Destroy(collision.gameObject);
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "goal")
         {
             GManager.GoalFlag = true;
+            audioSource.PlayOneShot(goalSE,0.8f);
             Debug.Log("ƒS[ƒ‹");
             Destroy(collision.gameObject);
         }
@@ -72,26 +74,26 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.X))
             {
                 //GManager.instance.GetSetStarSpeed = 1.2f;
-                IncreasePlayerSpeed(0.7f,0.3f,1.5f);
+                IncreasePlayerSpeed(0.7f,0.3f,1.52f);
             }
             else//‰½‚à‰Ÿ‚³‚ê‚Ä‚¢‚È‚¢ê‡
             {
                 //GManager.instance.GetSetStarSpeed = 0.3f;
-                ReducePlayerSpeed(2.0f,0.3f,1.5f);
+                ReducePlayerSpeed(2.0f,0.3f,1.52f);
             }
         }
     }
 
     private void IncreasePlayerSpeed(float acceleration,float minSpeed,float maxSpeed)
     {
-        GManager.StarSpeed += Time.deltaTime * acceleration;
-        GManager.StarSpeed = Mathf.Clamp(GManager.StarSpeed,minSpeed,maxSpeed);
+        GManager.ObjectSpeed += Time.deltaTime * acceleration;
+        GManager.ObjectSpeed = Mathf.Clamp(GManager.ObjectSpeed,minSpeed,maxSpeed);
     }
 
     private void ReducePlayerSpeed(float acceleration, float minSpeed, float maxSpeed)
     {
-        GManager.StarSpeed -= Time.deltaTime * acceleration;
-        GManager.StarSpeed = Mathf.Clamp(GManager.StarSpeed,minSpeed,maxSpeed);
+        GManager.ObjectSpeed -= Time.deltaTime * acceleration;
+        GManager.ObjectSpeed = Mathf.Clamp(GManager.ObjectSpeed,minSpeed,maxSpeed);
     }
 
     private void colObstacleProcess()//áŠQ•¨Õ“Ëˆ—‚ğŠÇ—‚·‚éŠÖ” 

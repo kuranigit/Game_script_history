@@ -23,7 +23,7 @@ public class GoalController : MonoBehaviour
     void GoalMove()//ƒS[ƒ‹‚Ì“®‚«‚ğŠÇ—‚·‚éŠÖ”
     {
         //ƒS[ƒ‹‚ğˆÚ“®‚³‚¹‚é
-        goalPos -= new Vector2(0, GManager.StarSpeed * Time.deltaTime * 7);
+        goalPos -= new Vector2(0, GManager.ObjectSpeed * Time.deltaTime * 7);
         goalTransform.position = goalPos;
     }
 }

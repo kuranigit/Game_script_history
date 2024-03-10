@@ -7,7 +7,7 @@ public class StarController : MonoBehaviour
     private Vector2 starPos;
     private Transform starTransform;
 
-    void Start()
+    private void Start()
     {
         //¯‹û‚Ìtransform‚ğŠi”[‚·‚é
         starTransform = this.transform;
@@ -24,7 +24,7 @@ public class StarController : MonoBehaviour
     void StarMove()//ƒXƒ^[‚Ì“®‚«‚ğŠÇ—‚·‚éŠÖ”
     {
         //¯‹û‚ğˆÚ“®‚³‚¹‚é
-        starPos -= new Vector2(0, GManager.StarSpeed * Time.deltaTime * 10);
+        starPos -= new Vector2(0, GManager.ObjectSpeed * Time.deltaTime * 10);
         starTransform.position = starPos;
     }
 

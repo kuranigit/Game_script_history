@@ -12,12 +12,7 @@ public class StarGenerator : MonoBehaviour
     private float span;
     private float currentTime;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
+    void FixedUpdate()
     {
         StarGenerate();
     }
@@ -26,7 +21,7 @@ public class StarGenerator : MonoBehaviour
     {
         //¯‹û‚ÌƒXƒs[ƒh‚Æ”½”ä—á‚µ‚Ä¯‹û‚ª~‚éƒXƒpƒ“‚ªŒˆ’è‚·‚é
         span = 0.1f;
-        currentTime += GManager.StarSpeed / GManager.FrameRate;
+        currentTime += GManager.ObjectSpeed / GManager.FrameRate;
 
         //span•b‚¨‚«‚É¯‹û‚ğ~‚ç‚¹‚é
         if (currentTime > span)
