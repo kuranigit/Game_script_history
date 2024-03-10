@@ -1,7 +1,7 @@
-隕石を打ち砕きながらいかに早くゴールに辿り着けるかを競うレースシューティングです。大学二年生の冬に作りました。
+隕石を打ち砕きながらいかに早くゴールに辿り着けるかを競うレースシューティングです。
 
 
 
 
-https://user-images.githubusercontent.com/82947479/216023910-d055e72a-112a-4035-8e49-d7a55700b23e.mp4
+https://github.com/kuranigit/Game_script_history/assets/82947479/86be9fdb-b8a5-4735-a4cb-6340b6360982
 
